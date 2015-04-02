@@ -45,8 +45,8 @@ generate this data from a wikidata dump.
 
 ## Release notes
 
-### 2.0.7
-* Suggest initial properties
+### 2.1.0 (2015-04-02)
+* Suggest initial properties for items and properties with no statements yet.
 
 ### 2.0.6 (2015-02-20)
 * No longer use Wikibase\Utils as it was renamed
