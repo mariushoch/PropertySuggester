@@ -45,6 +45,9 @@ generate this data from a wikidata dump.
 
 ## Release notes
 
+### 3.1.0 (2016-06-20)
+* Added entity namespace lookup by entity type, in addition to content model id, in PropertySuggesterHooks.
+
 ### 3.0.1 (2016-03-14)
 * Defined compatibility with Wikibase DataModel ~6.0
 
