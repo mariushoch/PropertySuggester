@@ -146,9 +146,9 @@
 				return 'reference';
 			} else if ( this._isInNewStatementView() ) {
 				return 'item';
-			} else {
-				return null;
 			}
+
+			return null;
 		},
 
 		/**
