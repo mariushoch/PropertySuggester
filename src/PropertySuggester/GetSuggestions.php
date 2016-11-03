@@ -57,12 +57,22 @@ class GetSuggestions extends ApiBase {
 		global $wgPropertySuggesterMinProbability;
 		global $wgPropertySuggesterClassifyingPropertyIds;
 		global $wgPropertySuggesterInitialSuggestions;
+		global $wgPropertySuggesterExternalRepoApiUrl;
 
 		$wikibaseRepo = WikibaseRepo::getDefaultInstance();
 		$store = $wikibaseRepo->getStore();
 
 		$this->termIndex = $store->getTermIndex();
-		$this->entityLookup = $store->getEntityLookup();
+		if ( $wgPropertySuggesterExternalRepoApiUrl === null ) {
+			$this->entityLookup = $store->getEntityLookup();
+		} else {
+			$this->entityLookup = new ApiEntityLookup(
+				$wikibaseRepo->getAllTypesEntityDeserializer(),
+				$wgPropertySuggesterExternalRepoApiUrl
+			);
+		}
+
+		// TODO: This should also be overwritten if $wgPropertySuggesterExternalRepoApiUrl is set.
 		$this->entityTitleLookup = $wikibaseRepo->getEntityTitleLookup();
 		$this->languageCodes = $wikibaseRepo->getTermsLanguages()->getLanguages();
 

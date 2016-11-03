@@ -54,7 +54,8 @@
 			31,
 			279
 		],
-		"PropertySuggesterMinProbability": 0.05
+		"PropertySuggesterMinProbability": 0.05,
+		"PropertySuggesterExternalRepoApiUrl": null
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 1

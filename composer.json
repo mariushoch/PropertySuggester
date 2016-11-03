@@ -28,6 +28,7 @@
 		],
 		"classmap": [
 			"PropertySuggesterHooks.php",
+			"src/ApiEntityLookup.php",
 			"maintenance/UpdateTable.php"
 		]
 	}
